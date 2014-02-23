@@ -17,12 +17,14 @@ int main(int argc, char ** argv) {
   evhtp_t  * htp    = evhtp_new(evbase, NULL);
 
   evhtp_set_cb(htp, "/ping", ping_cb, NULL);
-  evhtp_use_threads(htp, NULL, 4, NULL);
+  evhtp_use_threads(htp, NULL, 8, NULL);
+
   evhtp_bind_socket(htp, "0.0.0.0", 8081, 32768);
 
   event_base_loop(evbase, 0);
 
   evhtp_unbind_socket(htp);
+
   evhtp_free(htp);
   event_base_free(evbase);
 
