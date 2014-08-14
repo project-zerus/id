@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include <errno.h>
 
-#include "essence/libevhtp/evhtp.h"
+#include "libevhtp/evhtp.h"
 
 void ping_cb(evhtp_request_t* req, void* a) {
   const char* str = "pong\n";
