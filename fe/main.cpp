@@ -19,7 +19,7 @@ int main(int argc, char ** argv) {
   evhtp_set_cb(htp, "/ping", ping_cb, NULL);
   evhtp_use_threads(htp, NULL, 8, NULL);
 
-  evhtp_bind_socket(htp, "0.0.0.0", 8081, 32768);
+  evhtp_bind_socket(htp, "0.0.0.0", 5555, 32768);
 
   event_base_loop(evbase, 0);
 
